@@ -1,49 +1,49 @@
 ---
-page_title: "customer-connect_access_policy Resource - terraform-provider-customer-connect"
+page_title: "customerconnect_access_policy Resource - terraform-provider-customerconnect"
 subcategory: ""
 description: |-
   Manages a NetFoundry AccessPolicy (backed by a Ziti dial service policy).
 ---
 
-# customer-connect_access_policy (Resource)
+# customerconnect_access_policy (Resource)
 
 Manages a NetFoundry AccessPolicy (backed by a Ziti dial service policy).
 
 ## Example Usage
 
 ```terraform
-resource "customer-connect_location" "src" {
+resource "customerconnect_location" "src" {
   customer_id = "00000000-0000-0000-0000-000000000001"
   name        = "NYC Office"
 }
 
-resource "customer-connect_location" "dst" {
+resource "customerconnect_location" "dst" {
   customer_id = "00000000-0000-0000-0000-000000000001"
   name        = "AWS US-East-1"
   virtual     = true
 }
 
 # Access policy linking a source location to a destination location
-resource "customer-connect_access_policy" "example" {
+resource "customerconnect_access_policy" "example" {
   provider_id = "00000000-0000-0000-0000-000000000002"
   name        = "nyc-to-aws"
   description = "Allow NYC Office to reach AWS US-East-1"
 
   sources = [
     {
-      location_id = customer-connect_location.src.id
+      location_id = customerconnect_location.src.id
     }
   ]
 
   destinations = [
     {
-      location_id = customer-connect_location.dst.id
+      location_id = customerconnect_location.dst.id
     }
   ]
 }
 
 # Access policy with multiple sources and destinations using connectors
-resource "customer-connect_access_policy" "multi" {
+resource "customerconnect_access_policy" "multi" {
   provider_id = "00000000-0000-0000-0000-000000000002"
   name        = "multi-endpoint-policy"
 
@@ -52,7 +52,7 @@ resource "customer-connect_access_policy" "multi" {
       connector_id = "00000000-0000-0000-0000-000000000010"
     },
     {
-      location_id = customer-connect_location.src.id
+      location_id = customerconnect_location.src.id
     }
   ]
 
@@ -117,5 +117,5 @@ Import is supported using the following syntax:
 
 ```shell
 # Import an existing AccessPolicy by its ID
-terraform import customer-connect_access_policy.example "00000000-0000-0000-0000-000000000001"
+terraform import customerconnect_access_policy.example "00000000-0000-0000-0000-000000000001"
 ```

@@ -1,11 +1,11 @@
 ---
-page_title: "customer-connect_connector_model Data Source - terraform-provider-customer-connect"
+page_title: "customerconnect_connector_model Data Source - terraform-provider-customerconnect"
 subcategory: ""
 description: |-
   Fetches a single NetFoundry Connector Model by ID.
 ---
 
-# customer-connect_connector_model (Data Source)
+# customerconnect_connector_model (Data Source)
 
 Fetches a single NetFoundry Connector Model by ID.
 
@@ -13,25 +13,25 @@ Fetches a single NetFoundry Connector Model by ID.
 
 ```terraform
 # Look up a Connector Model by its ID
-data "customer-connect_connector_model" "example" {
+data "customerconnect_connector_model" "example" {
   id = "00000000-0000-0000-0000-000000000001"
 }
 
 # Reference computed attributes from the data source
 output "connector_model_name" {
-  value = data.customer-connect_connector_model.example.name
+  value = data.customerconnect_connector_model.example.name
 }
 
 output "connector_model_type" {
-  value = data.customer-connect_connector_model.example.type
+  value = data.customerconnect_connector_model.example.type
 }
 
 output "connector_model_applications" {
-  value = data.customer-connect_connector_model.example.applications
+  value = data.customerconnect_connector_model.example.applications
 }
 
 output "connector_model_counts" {
-  value = data.customer-connect_connector_model.example.counts
+  value = data.customerconnect_connector_model.example.counts
 }
 ```
 

@@ -1,11 +1,11 @@
 ---
-page_title: "customer-connect_application Data Source - terraform-provider-customer-connect"
+page_title: "customerconnect_application Data Source - terraform-provider-customerconnect"
 subcategory: ""
 description: |-
   Fetches a single NetFoundry Application by ID.
 ---
 
-# customer-connect_application (Data Source)
+# customerconnect_application (Data Source)
 
 Fetches a single NetFoundry Application by ID.
 
@@ -13,22 +13,22 @@ Fetches a single NetFoundry Application by ID.
 
 ```terraform
 # Look up an Application by its connector_id and ID
-data "customer-connect_application" "example" {
+data "customerconnect_application" "example" {
   connector_id = "00000000-0000-0000-0000-000000000010"
   id           = "00000000-0000-0000-0000-000000000001"
 }
 
 # Reference computed attributes from the data source
 output "application_name" {
-  value = data.customer-connect_application.example.name
+  value = data.customerconnect_application.example.name
 }
 
 output "application_ziti_id" {
-  value = data.customer-connect_application.example.ziti_id
+  value = data.customerconnect_application.example.ziti_id
 }
 
 output "application_addresses" {
-  value = data.customer-connect_application.example.addresses
+  value = data.customerconnect_application.example.addresses
 }
 ```
 

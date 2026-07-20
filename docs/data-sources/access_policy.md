@@ -1,11 +1,11 @@
 ---
-page_title: "customer-connect_access_policy Data Source - terraform-provider-customer-connect"
+page_title: "customerconnect_access_policy Data Source - terraform-provider-customerconnect"
 subcategory: ""
 description: |-
   Fetches a single NetFoundry AccessPolicy by ID.
 ---
 
-# customer-connect_access_policy (Data Source)
+# customerconnect_access_policy (Data Source)
 
 Fetches a single NetFoundry AccessPolicy by ID.
 
@@ -13,29 +13,29 @@ Fetches a single NetFoundry AccessPolicy by ID.
 
 ```terraform
 # Look up an AccessPolicy by its ID
-data "customer-connect_access_policy" "example" {
+data "customerconnect_access_policy" "example" {
   id = "00000000-0000-0000-0000-000000000001"
 }
 
 # Reference computed attributes from the data source
 output "access_policy_name" {
-  value = data.customer-connect_access_policy.example.name
+  value = data.customerconnect_access_policy.example.name
 }
 
 output "access_policy_enabled" {
-  value = data.customer-connect_access_policy.example.enabled
+  value = data.customerconnect_access_policy.example.enabled
 }
 
 output "access_policy_ziti_name" {
-  value = data.customer-connect_access_policy.example.ziti_name
+  value = data.customerconnect_access_policy.example.ziti_name
 }
 
 output "access_policy_sources" {
-  value = data.customer-connect_access_policy.example.sources
+  value = data.customerconnect_access_policy.example.sources
 }
 
 output "access_policy_destinations" {
-  value = data.customer-connect_access_policy.example.destinations
+  value = data.customerconnect_access_policy.example.destinations
 }
 ```
 

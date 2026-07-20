@@ -1,11 +1,11 @@
 ---
-page_title: "customer-connect_connector_model Resource - terraform-provider-customer-connect"
+page_title: "customerconnect_connector_model Resource - terraform-provider-customerconnect"
 subcategory: ""
 description: |-
   Manages a NetFoundry Connector Model — a reusable template defining the applications a connector hosts, from which connectors of a provider inherit their configuration.
 ---
 
-# customer-connect_connector_model (Resource)
+# customerconnect_connector_model (Resource)
 
 Manages a NetFoundry Connector Model — a reusable template defining the applications a connector hosts, from which connectors of a provider inherit their configuration.
 
@@ -13,7 +13,7 @@ Manages a NetFoundry Connector Model — a reusable template defining the applic
 
 ```terraform
 # Connector model with a single application and address mapping
-resource "customer-connect_connector_model" "web_gateway" {
+resource "customerconnect_connector_model" "web_gateway" {
   provider_id = "00000000-0000-0000-0000-000000000002"
   name        = "web-gateway-model"
   description = "Standard gateway model exposing an internal web application"
@@ -39,7 +39,7 @@ resource "customer-connect_connector_model" "web_gateway" {
 
 # Connector model with multiple applications, including one left for
 # connectors to override via required fields
-resource "customer-connect_connector_model" "multi" {
+resource "customerconnect_connector_model" "multi" {
   provider_id = "00000000-0000-0000-0000-000000000002"
   name        = "multi-app-model"
   type        = "DEVICE"
@@ -69,7 +69,7 @@ resource "customer-connect_connector_model" "multi" {
 }
 
 # SDK-embedded connector model (no type/protocol/addresses on applications)
-resource "customer-connect_connector_model" "sdk" {
+resource "customerconnect_connector_model" "sdk" {
   provider_id = "00000000-0000-0000-0000-000000000002"
   name        = "sdk-embedded-model"
   type        = "SDK_EMBEDDED"
@@ -166,5 +166,5 @@ Import is supported using the following syntax:
 
 ```shell
 # Import an existing Connector Model by its ID
-terraform import customer-connect_connector_model.example "00000000-0000-0000-0000-000000000001"
+terraform import customerconnect_connector_model.example "00000000-0000-0000-0000-000000000001"
 ```

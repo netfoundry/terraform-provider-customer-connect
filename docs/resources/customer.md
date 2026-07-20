@@ -1,25 +1,25 @@
 ---
-page_title: "customer-connect_customer Resource - terraform-provider-customer-connect"
+page_title: "customerconnect_customer Resource - terraform-provider-customerconnect"
 subcategory: ""
 description: |-
   Manages a NetFoundry Customer — a grouping of the locations and connectors that participate in access policies under a provider.
 ---
 
-# customer-connect_customer (Resource)
+# customerconnect_customer (Resource)
 
 Manages a NetFoundry Customer — a grouping of the locations and connectors that participate in access policies under a provider.
 
 ## Example Usage
 
 ```terraform
-resource "customer-connect_customer" "example" {
+resource "customerconnect_customer" "example" {
   provider_id = "00000000-0000-0000-0000-000000000001"
   name        = "NF Corp"
   description = "NF Corp customer account"
 }
 
 # Customer created disabled
-resource "customer-connect_customer" "disabled" {
+resource "customerconnect_customer" "disabled" {
   provider_id = "00000000-0000-0000-0000-000000000001"
   name        = "Suspended Customer"
   enabled     = false
@@ -65,5 +65,5 @@ Import is supported using the following syntax:
 
 ```shell
 # Import an existing Customer by its ID
-terraform import customer-connect_customer.example "00000000-0000-0000-0000-000000000001"
+terraform import customerconnect_customer.example "00000000-0000-0000-0000-000000000001"
 ```
