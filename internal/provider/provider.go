@@ -248,6 +248,7 @@ func (p *customerConnectProvider) DataSources(_ context.Context) []func() dataso
 		NewApplicationDataSource,
 		NewConnectorModelDataSource,
 		NewCustomerDataSource,
+		NewCCProviderDataSource,
 	}
 }
 
@@ -259,5 +260,6 @@ func (p *customerConnectProvider) Resources(_ context.Context) []func() resource
 		NewApplicationResource,
 		NewConnectorModelResource,
 		NewCustomerResource,
+		NewCCProviderResource,
 	}
 }
